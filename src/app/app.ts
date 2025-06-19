@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { Menu } from "./components/menu/menu";
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+    selector: 'app-root',
+    imports: [Menu, RouterModule, RouterOutlet],
+    templateUrl: './app.html',
+    styleUrl: './app.css'
 })
 export class App {
-  protected title = 'meu-pedido';
+    protected title = 'Meu Pedido';
 }
