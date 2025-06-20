@@ -5,9 +5,9 @@ import { Store } from './store.interface';
 @Injectable({
     providedIn: 'root'
 })
-export class StoreClient implements Store {
+export class StoreCliente implements Store {
     private _data: ICliente[] = [];
-    private static instance: StoreClient | null = null;
+    private static instance: StoreCliente | null = null;
     private static lastId: number = 0;
     private static maxLength: number = 10;
 
@@ -15,8 +15,8 @@ export class StoreClient implements Store {
         this.load();
     }
 
-    static getInstance(): StoreClient {
-        return StoreClient.instance || (StoreClient.instance = new StoreClient());
+    static getInstance(): StoreCliente {
+        return StoreCliente.instance || (StoreCliente.instance = new StoreCliente());
     }
 
     getData(): ICliente[] {
@@ -24,10 +24,10 @@ export class StoreClient implements Store {
     }
 
     protected add(cliente: ICliente): ICliente {
-        if (this._data.length >= StoreClient.maxLength) {
+        if (this._data.length >= StoreCliente.maxLength) {
             throw new Error('Limite de clientes atingido');
         }
-        cliente.id = ++StoreClient.lastId;
+        cliente.id = ++StoreCliente.lastId;
         this._data.push(cliente);
         return cliente;
     }
