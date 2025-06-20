@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr><td>#</td><td>Nome</td><td>Telefone</td><td>Email</td><td>Endereço</td></tr>
+    </thead>
+    <tbody>
+        @for (cliente of data; track cliente.id) {
+            <tr>
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.telefone}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.endereco}}</td>
+                <td><button (click)="editar(cliente)">Editar</button></td>
+                <td><button (click)="excluir(cliente)">Excluir</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
