@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ICliente } from '../../components/cliente/i-cliente';
+import { Cliente } from '../../components/cliente/cliente';
 import { Store } from './store.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StoreCliente implements Store {
-    private _data: ICliente[] = [];
+    private _data: Cliente[] = [];
     private static instance: StoreCliente | null = null;
     private static lastId: number = 0;
     private static maxLength: number = 10;
@@ -19,11 +19,11 @@ export class StoreCliente implements Store {
         return StoreCliente.instance || (StoreCliente.instance = new StoreCliente());
     }
 
-    getData(): ICliente[] {
+    getData(): Cliente[] {
         return this._data;
     }
 
-    protected add(cliente: ICliente): ICliente {
+    protected add(cliente: Cliente): Cliente {
         if (this._data.length >= StoreCliente.maxLength) {
             throw new Error('Limite de clientes atingido');
         }
@@ -42,7 +42,7 @@ export class StoreCliente implements Store {
         return true;
     }
 
-    protected update(cliente: ICliente): ICliente {
+    protected update(cliente: Cliente): Cliente {
         const index = this._data.findIndex(c => c.id === cliente.id);
         if (index === -1) {
             throw new Error('Cliente não encontrado');
@@ -51,11 +51,11 @@ export class StoreCliente implements Store {
         return cliente;
     }
 
-    public getById(id: number): ICliente | undefined {
+    public getById(id: number): Cliente | undefined {
         return this._data.find(cliente => cliente.id === id);
     }
 
-    public save(cliente: ICliente): ICliente {
+    public save(cliente: Cliente): Cliente {
         const index = this._data.findIndex(c => c.id === cliente.id);
         if (index === -1) {
             return this.add(cliente);

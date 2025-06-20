@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ICliente } from '../i-cliente';
+import { Cliente } from '../cliente';
 
 @Component({
     selector: 'app-cliente-table',
@@ -8,15 +8,15 @@ import { ICliente } from '../i-cliente';
     styleUrl: './cliente-table.css'
 })
 export class ClienteTable {
-    @Input() data!: ICliente[]
-    @Output() editarEvent = new EventEmitter<ICliente>()
-    @Output() excluirEvent = new EventEmitter<ICliente>()
+    @Input() data!: Cliente[]
+    @Output() editarEvent = new EventEmitter<Cliente>()
+    @Output() excluirEvent = new EventEmitter<Cliente>()
 
-    editar(cliente: ICliente) {
+    editar(cliente: Cliente) {
         this.editarEvent.emit(cliente);
     }
 
-    excluir(cliente: ICliente) {
+    excluir(cliente: Cliente) {
         this.excluirEvent.emit(cliente);
     }
 }

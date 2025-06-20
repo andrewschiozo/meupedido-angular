@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ClienteTable } from '../../cliente/cliente-table/cliente-table';
 import { ClienteForm } from '../../cliente/cliente-form/cliente-form';
-import { ICliente } from '../../cliente/i-cliente';
+import { Cliente } from '../../cliente/cliente';
 import { App } from '../../../app';
 
 @Component({
@@ -12,10 +12,10 @@ import { App } from '../../../app';
 })
 export class ViewCliente extends App {
     
-    cliente: ICliente = { id: 0, nome: '', telefone: '', email: '', endereco: '' };
-    clientes: ICliente[] = this.services.store.cliente.getData();
+    cliente: Cliente = { id: 0, nome: '', telefone: '', email: '', endereco: '' };
+    clientes: Cliente[] = this.services.store.cliente.getData();
 
-    handleFormSubmitEvent(cliente: ICliente) {
+    handleFormSubmitEvent(cliente: Cliente) {
         try{
             this.services.store.cliente.save(cliente);
         }
@@ -24,11 +24,11 @@ export class ViewCliente extends App {
         }
     }
 
-    handleTableEditarEvent(cliente: ICliente) {
+    handleTableEditarEvent(cliente: Cliente) {
         this.cliente = cliente;
     }
 
-    handleTableExcluirEvent(cliente: ICliente) {
+    handleTableExcluirEvent(cliente: Cliente) {
         this.services.store.cliente.remove(cliente.id);
         this.clientes = this.services.store.cliente.getData();
     }

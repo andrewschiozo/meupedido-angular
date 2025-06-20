@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ICliente } from '../i-cliente';
+import { Cliente } from '../cliente';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,8 +10,8 @@ import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angula
 })
 export class ClienteForm {
 
-    @Input() cliente!: ICliente;
-    @Output() submitEvent = new EventEmitter<ICliente>();
+    @Input() cliente!: Cliente;
+    @Output() submitEvent = new EventEmitter<Cliente>();
 
     formCliente!: FormGroup;
 
