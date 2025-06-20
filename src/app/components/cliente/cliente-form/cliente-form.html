@@ -1,0 +1,10 @@
+<p>Cliente #{{ formCliente.value.id }}</p>
+<form [formGroup]="formCliente"
+    (ngSubmit)="handleSubmit($event)" >
+    <input id="id" type="number" formControlName="id" placeholder="ID" />
+    <input id="nome" formControlName="nome" placeholder="Nome" />
+    <input id="telefone" formControlName="telefone" placeholder="Telefone" />
+    <input id="email" formControlName="email" placeholder="Email" />
+    <input id="endereco" formControlName="endereco" placeholder="Endereço" />
+    <button type="submit" [disabled]="!formCliente.valid">Salvar</button>
+</form>
