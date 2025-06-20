@@ -1,1 +1,16 @@
-<p>view-cliente works!</p>
+<p>Clientes</p>
+
+<app-cliente-form
+    [cliente]="cliente"
+    (submitEvent)="handleFormSubmitEvent($event)">
+</app-cliente-form>
+
+<hr />
+
+@if (clientes) {
+<app-cliente-table
+    [data]="clientes"
+    (editarEvent)="handleTableEditarEvent($event)"
+    (excluirEvent)="handleTableExcluirEvent($event)">
+</app-cliente-table>
+}
