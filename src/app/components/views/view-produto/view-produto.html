@@ -1,1 +1,16 @@
-<p>view-produto works!</p>
+<p>Produtos</p>
+
+<app-produto-form
+    [produto]="produto"
+    (submitEvent)="handleFormSubmitEvent($event)">
+</app-produto-form>
+
+<hr />
+
+@if (produtos) {
+<app-produto-table
+    [data]="produtos"
+    (editarEvent)="handleTableEditarEvent($event)"
+    (excluirEvent)="handleTableExcluirEvent($event)">
+</app-produto-table>
+}

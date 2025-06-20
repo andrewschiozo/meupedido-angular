@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr><td>#</td><td>Nome</td><td>Preço</td><td>Descrição</td><td>Imagem</td><td>Quantidade</td><td>Categoria</td></tr>
+    </thead>
+    <tbody>
+        @for (registro of data; track registro.id) {
+            <tr>
+                <td>{{registro.id}}</td>
+                <td>{{registro.nome}}</td>
+                <td>{{registro.preco}}</td>
+                <td>{{registro.descricao}}</td>
+                <td>{{registro.imagem}}</td>
+                <td>{{registro.quantidade}}</td>
+                <td>{{registro.categoria}}</td>
+                <td><button (click)="editar(registro)">Editar</button></td>
+                <td><button (click)="excluir(registro)">Excluir</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

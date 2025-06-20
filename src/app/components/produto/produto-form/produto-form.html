@@ -1,0 +1,12 @@
+<p>Produto #{{ formProduto.value.id }}</p>
+<form [formGroup]="formProduto"
+    (ngSubmit)="handleSubmit($event)" >
+    <input id="id" type="number" formControlName="id" placeholder="ID" />
+    <input id="nome" formControlName="nome" placeholder="Nome" />
+    <input id="preco" formControlName="preco" placeholder="Preço" />
+    <input id="descricao" formControlName="descricao" placeholder="Descrição" />
+    <input id="imagem" formControlName="imagem" placeholder="Imagem" />
+    <input id="quantidade" formControlName="quantidade" placeholder="Quantidade" />
+    <input id="categoria" formControlName="categoria" placeholder="Categoria" />
+    <button type="submit" [disabled]="!formProduto.valid">Salvar</button>
+</form>
