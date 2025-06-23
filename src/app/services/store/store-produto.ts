@@ -10,6 +10,7 @@ export class StoreProduto implements Store {
     private static instance: StoreProduto | null = null;
     private static lastId: number = 0;
     private static maxLength: number = 20;
+    private static entityToEdit: Produto | null = null;
 
     private constructor() {
         this.load();
@@ -61,6 +62,18 @@ export class StoreProduto implements Store {
             return this.add(registro);
         }
         return this.update(registro);
+    }
+
+    public getEntityToEdit(): Produto | null {
+        return StoreProduto.entityToEdit;
+    }
+
+    public setEntityToEdit(produto: Produto): void {
+        StoreProduto.entityToEdit = produto;
+    }
+
+    public clearEntityToEdit(): void {
+        StoreProduto.entityToEdit = null;
     }
 
     public load(): void {

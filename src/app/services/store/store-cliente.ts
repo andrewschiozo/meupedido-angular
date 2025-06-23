@@ -10,6 +10,7 @@ export class StoreCliente implements Store {
     private static instance: StoreCliente | null = null;
     private static lastId: number = 0;
     private static maxLength: number = 10;
+    private static entityToEdit: Cliente | null = null;
 
     private constructor() {
         this.load();
@@ -19,7 +20,7 @@ export class StoreCliente implements Store {
         return StoreCliente.instance || (StoreCliente.instance = new StoreCliente());
     }
 
-    getData(): Cliente[] {
+    public getData(): Cliente[] {
         return this._data;
     }
 
@@ -61,6 +62,18 @@ export class StoreCliente implements Store {
             return this.add(cliente);
         }
         return this.update(cliente);
+    }
+
+    public getEntityToEdit(): Cliente | null {
+        return StoreCliente.entityToEdit;
+    }
+
+    public setEntityToEdit(cliente: Cliente): void {
+        StoreCliente.entityToEdit = cliente;
+    }
+
+    public clearEntityToEdit(): void {
+        StoreCliente.entityToEdit = null;
     }
 
     public load(): void {

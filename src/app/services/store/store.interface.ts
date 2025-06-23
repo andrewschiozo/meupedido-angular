@@ -9,4 +9,10 @@ export interface Store {
     save(data: any): any;
 
     load(): void;
+
+    getEntityToEdit(): any | null;
+
+    setEntityToEdit(data: any): void;
+
+    clearEntityToEdit(): void;
 }

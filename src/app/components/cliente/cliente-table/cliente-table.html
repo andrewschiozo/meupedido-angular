@@ -1,6 +1,10 @@
-<table>
+<table [class]="class">
     <thead>
-        <tr><td>#</td><td>Nome</td><td>Telefone</td><td>Email</td><td>Endereço</td></tr>
+        <tr>
+            @for(th of tableHeader; track th) {
+                <th>{{th}}</th>
+            }
+        </tr>
     </thead>
     <tbody>
         @for (cliente of data; track cliente.id) {
@@ -10,8 +14,17 @@
                 <td>{{cliente.telefone}}</td>
                 <td>{{cliente.email}}</td>
                 <td>{{cliente.endereco}}</td>
-                <td><button (click)="editar(cliente)">Editar</button></td>
-                <td><button (click)="excluir(cliente)">Excluir</button></td>
+                <td>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-outline-secondary" id="dropdownAction" ngbDropdownToggle>
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownAction">
+                            <button ngbDropdownItem (click)="editar(cliente)">Editar</button>
+                            <button ngbDropdownItem (click)="excluir(cliente)">Excluir</button>
+                        </div>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

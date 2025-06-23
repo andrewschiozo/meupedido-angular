@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Menu } from "./components/menu/menu";
 import { Store } from "./services/store/store.interface";
-import { StoreCliente } from './services/store/store-cliente';
 import { StoreProduto } from './services/store/store-produto';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreCliente } from './services/store/store-cliente';
 
 @Component({
     selector: 'app-root',
     imports: [Menu, RouterModule, RouterOutlet, NgbModule],
     templateUrl: './app.html',
-    styleUrl: './app.css'
+    styleUrl: './app.css',
 })
 export class App {
+
     protected title = 'Meu Pedido';
-    public sidebarOpen = false;
+    public router: Router = new Router();
 
     services = {
         store: {

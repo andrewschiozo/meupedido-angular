@@ -1,10 +1,39 @@
-<p>Cliente #{{ formCliente.value.id }}</p>
-<form [formGroup]="formCliente"
+<h2 class="fs-4 fw-semibold mb-3">Cliente #{{ formCliente.value.id || ''}}</h2>
+
+<form
+    role="form"
+    [formGroup]="formCliente"
     (ngSubmit)="handleSubmit($event)" >
-    <input id="id" type="number" formControlName="id" placeholder="ID" />
-    <input id="nome" formControlName="nome" placeholder="Nome" />
-    <input id="telefone" formControlName="telefone" placeholder="Telefone" />
-    <input id="email" formControlName="email" placeholder="Email" />
-    <input id="endereco" formControlName="endereco" placeholder="Endereço" />
-    <button type="submit" [disabled]="!formCliente.valid">Salvar</button>
+    
+    <div class="form-floating mb-3 d-none">
+        <input id="id" type="number" formControlName="id" class="form-control" />
+        <label for="id">ID</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input id="nome" formControlName="nome" class="form-control" />
+        <label for="nome">Nome</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input id="telefone" formControlName="telefone" class="form-control" />
+        <label for="telefone">Telefone</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input id="email" formControlName="email" class="form-control" />
+        <label for="email">Email</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input id="endereco" formControlName="endereco" class="form-control" />
+        <label for="endereco">Endereço</label>
+    </div>
+    <button 
+        type="submit"
+        [disabled]="!formCliente.valid"
+        data-bs-theme="light"
+        class="btn btn-success w-100">
+        Salvar
+    </button>
 </form>

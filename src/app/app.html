@@ -1,9 +1,9 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top shadow-sm px-3">
-        <a class="navbar-brand me-auto" href="#">{{ title }}</a>
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-subtle text-primary-emphasis sticky-top fixed-top shadow-sm px-3">
+        <a class="navbar-brand me-auto" routerLink="home" href="#">{{ title }}</a>
         <app-menu></app-menu>
     </nav>
 </header>
-<main id="page-content-wrapper" class="container-fluid py-4 mt-5">
+<main id="page-content-wrapper" class="container py-3">
     <router-outlet></router-outlet>
 </main>

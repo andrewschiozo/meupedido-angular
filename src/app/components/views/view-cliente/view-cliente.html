@@ -1,9 +1,11 @@
-<p>Clientes</p>
+<h2 class="fs-4 fw-semibold mb-3">Cliente</h2>
 
-<app-cliente-form
-    [cliente]="cliente"
-    (submitEvent)="handleFormSubmitEvent($event)">
-</app-cliente-form>
+<button 
+    routerLink="/cliente/novo"
+    data-bs-theme="dark"
+    class="btn btn-dark bg-primary-subtle py-1 px-4 ps-3">
+    <i class="bi bi-plus"></i> Novo
+</button>
 
 <hr />
 
