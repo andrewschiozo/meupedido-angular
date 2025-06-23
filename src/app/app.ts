@@ -4,15 +4,18 @@ import { Menu } from "./components/menu/menu";
 import { Store } from "./services/store/store.interface";
 import { StoreCliente } from './services/store/store-cliente';
 import { StoreProduto } from './services/store/store-produto';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-root',
-    imports: [Menu, RouterModule, RouterOutlet],
+    imports: [Menu, RouterModule, RouterOutlet, NgbModule],
     templateUrl: './app.html',
     styleUrl: './app.css'
 })
 export class App {
     protected title = 'Meu Pedido';
+    public sidebarOpen = false;
+
     services = {
         store: {
             cliente: {} as Store,
