@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from '../produto';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-produto-table',
-    imports: [],
+    imports: [NgbDropdownModule],
     templateUrl: './produto-table.html',
     styleUrl: './produto-table.css'
 })
@@ -11,6 +12,9 @@ export class ProdutoTable {
     @Input() data!: Produto[]
     @Output() editarEvent = new EventEmitter<Produto>()
     @Output() excluirEvent = new EventEmitter<Produto>()
+
+    public class = 'table table-hover';
+    public tableHeader = ['#', 'Nome', 'Preço', 'Descrição', 'Imagem', 'Quantidade', 'Categoria', 'Ações'];
 
     editar(registro: Produto) {
         this.editarEvent.emit(registro);

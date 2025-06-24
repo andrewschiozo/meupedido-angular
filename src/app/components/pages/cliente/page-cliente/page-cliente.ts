@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { ClienteTable } from '../../../cliente/cliente-table/cliente-table';
 import { Cliente } from '../../../cliente/cliente';
 import { App } from '../../../../app';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-page-cliente',
-    imports: [ClienteTable, CommonModule, RouterModule],
+    imports: [ClienteTable, RouterModule],
     templateUrl: './page-cliente.html',
     styleUrl: './page-cliente.css'
 })

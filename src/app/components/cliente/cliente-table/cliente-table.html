@@ -7,21 +7,21 @@
         </tr>
     </thead>
     <tbody>
-        @for (cliente of data; track cliente.id) {
+        @for (registro of data; track registro.id) {
             <tr>
-                <td>{{cliente.id}}</td>
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.telefone}}</td>
-                <td>{{cliente.email}}</td>
-                <td>{{cliente.endereco}}</td>
+                <td>{{registro.id}}</td>
+                <td>{{registro.nome}}</td>
+                <td>{{registro.telefone}}</td>
+                <td>{{registro.email}}</td>
+                <td>{{registro.endereco}}</td>
                 <td>
                     <div ngbDropdown class="d-inline-block">
                         <button type="button" class="btn btn-outline-secondary" id="dropdownAction" ngbDropdownToggle>
                             <i class="bi bi-list"></i>
                         </button>
                         <div ngbDropdownMenu aria-labelledby="dropdownAction">
-                            <button ngbDropdownItem (click)="editar(cliente)">Editar</button>
-                            <button ngbDropdownItem (click)="excluir(cliente)">Excluir</button>
+                            <button ngbDropdownItem (click)="editar(registro)">Editar</button>
+                            <button ngbDropdownItem (click)="excluir(registro)">Excluir</button>
                         </div>
                     </div>
                 </td>
