@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewCliente } from './view-cliente';
+import { PageHome } from './page-home';
 
-describe('ViewCliente', () => {
-  let component: ViewCliente;
-  let fixture: ComponentFixture<ViewCliente>;
+describe('PageHome', () => {
+  let component: PageHome;
+  let fixture: ComponentFixture<PageHome>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewCliente]
+      imports: [PageHome]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewCliente);
+    fixture = TestBed.createComponent(PageHome);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { ClienteTable } from '../../cliente/cliente-table/cliente-table';
-import { Cliente } from '../../cliente/cliente';
-import { App } from '../../../app';
+import { ClienteTable } from '../../../cliente/cliente-table/cliente-table';
+import { Cliente } from '../../../cliente/cliente';
+import { App } from '../../../../app';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Table } from '../../common/table/table';
 
 @Component({
-    selector: 'app-view-cliente',
+    selector: 'app-page-cliente',
     imports: [ClienteTable, CommonModule, RouterModule],
-    templateUrl: './view-cliente.html',
-    styleUrl: './view-cliente.css'
+    templateUrl: './page-cliente.html',
+    styleUrl: './page-cliente.css'
 })
-export class ViewCliente extends App {
+export class PageCliente extends App {
     clientes: Cliente[] = this.services.store.cliente.getData();
 
 

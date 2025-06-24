@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { ClienteForm } from '../../cliente/cliente-form/cliente-form';
-import { Cliente } from '../../cliente/cliente';
-import { App } from '../../../app';
+import { ClienteForm } from '../../../cliente/cliente-form/cliente-form';
+import { Cliente } from '../../../cliente/cliente';
+import { App } from '../../../../app';
 
 @Component({
-    selector: 'app-view-cliente-form',
+    selector: 'app-page-cliente-form',
     imports: [ClienteForm],
-    templateUrl: './view-cliente-form.html',
-    styleUrl: './view-cliente-form.css'
+    templateUrl: './page-cliente-form.html',
+    styleUrl: './page-cliente-form.css'
 })
-export class ViewClienteForm extends App{
+export class PageClienteForm extends App{
     cliente: Cliente = { id: 0, nome: '', telefone: '', email: '', endereco: '' };
 
     constructor() {

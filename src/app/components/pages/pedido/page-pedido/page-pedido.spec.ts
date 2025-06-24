@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewPedido } from './view-pedido';
+import { PagePedido } from './page-pedido';
 
-describe('ViewPedido', () => {
-  let component: ViewPedido;
-  let fixture: ComponentFixture<ViewPedido>;
+describe('PagePedido', () => {
+  let component: PagePedido;
+  let fixture: ComponentFixture<PagePedido>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewPedido]
+      imports: [PagePedido]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewPedido);
+    fixture = TestBed.createComponent(PagePedido);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
