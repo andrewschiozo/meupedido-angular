@@ -10,11 +10,11 @@ import { Produto } from '../../../produto/produto';
     styleUrl: './page-produto-form.css'
 })
 export class PageProdutoForm extends App {
-    produto: Produto = { id: 0, nome: '', preco: 0, descricao: '', imagem: '', quantidade: 0, categoria: '' };
+    produto: Produto = { id: 0, nome: '', preco: 0, descricao: '', imagem: '', qtdEstoque: 0, categoria: '' };
 
     constructor() {
         super();
-        this.produto = this.services.store.produto.getEntityToEdit() || { id: 0, nome: '', preco: 0, descricao: '', imagem: '', quantidade: 0, categoria: '' };
+        this.produto = this.services.store.produto.getEntityToEdit() || { id: 0, nome: '', preco: 0, descricao: '', imagem: '', qtdEstoque: 0, categoria: '' };
     }
 
     handleFormSubmitEvent(produto: Produto) {

@@ -21,7 +21,7 @@ export class ProdutoForm {
             preco: new FormControl<number>(this.produto.preco, Validators.required),
             descricao: new FormControl<string>(this.produto.descricao, Validators.required),
             imagem: new FormControl<string>(this.produto.imagem, Validators.required),
-            quantidade: new FormControl<number>(this.produto.quantidade, Validators.required),
+            qtdEstoque: new FormControl<number>(this.produto.qtdEstoque, Validators.required),
             categoria: new FormControl<string>(this.produto.categoria, Validators.required),
         });
         return;
@@ -41,7 +41,7 @@ export class ProdutoForm {
             preco: this.formProduto.value.preco,
             descricao: this.formProduto.value.descricao,
             imagem: this.formProduto.value.imagem,
-            quantidade: this.formProduto.value.quantidade,
+            qtdEstoque: this.formProduto.value.qtdEstoque,
             categoria: this.formProduto.value.categoria
         };
         this.submitEvent.emit(produto);

@@ -4,6 +4,6 @@ export interface Produto {
     preco: number;
     descricao: string;
     imagem: string;
-    quantidade: number;
+    qtdEstoque: number;
     categoria: string;
 }

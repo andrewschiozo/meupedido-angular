@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './page-produto.css'
 })
 export class PageProduto extends App{
-    produto: Produto = { id: 0, nome: '', preco: 0, descricao: '', imagem: '', quantidade: 0, categoria: '' };
+    produto: Produto = { id: 0, nome: '', preco: 0, descricao: '', imagem: '', qtdEstoque: 0, categoria: '' };
     produtos: Produto[] = this.services.store.produto.getData();
 
     handleFormSubmitEvent(produto: Produto) {
