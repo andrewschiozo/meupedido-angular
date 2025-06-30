@@ -1,19 +1,11 @@
 import { Routes } from '@angular/router';
-import { PageHome } from './components/pages/page-home/page-home';
-import { PagePedido } from './components/pages/pedido/page-pedido/page-pedido';
-import { PageCliente } from './components/pages/cliente/page-cliente/page-cliente';
-import { PageClienteForm } from './components/pages/cliente/page-cliente-form/page-cliente-form';
-import { PageProduto } from './components/pages/produto/page-produto/page-produto';
-import { PageProdutoForm } from './components/pages/produto/page-produto-form/page-produto-form';
+import { PageHome } from './features/home/pages/page-home/page-home';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: PageHome },
-    { path: 'pedido', component: PagePedido },
-    { path: 'cliente', component: PageCliente },
-    { path: 'cliente/novo', component: PageClienteForm },
-    { path: 'cliente/editar', component: PageClienteForm },
-    { path: 'produto', component: PageProduto },
-    { path: 'produto/novo', component: PageProdutoForm },
-    { path: 'produto/editar', component: PageProdutoForm },
+    { path: 'home', component: PageHome, title: 'Home' },
+    { path: 'pedido', loadChildren: () => import('./features/pedido/pedido.routes').then(m => m.PEDIDO_ROUTES) },
+    { path: 'cliente', loadChildren: () => import('./features/cliente/cliente.routes').then(m => m.CLIENTE_ROUTES) },
+    { path: 'produto', loadChildren: () => import('./features/produto/produto.routes').then(m => m.PRODUTO_ROUTES) },
+    { path: '**', redirectTo: 'home' },
 ];

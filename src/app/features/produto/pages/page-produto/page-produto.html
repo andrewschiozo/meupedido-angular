@@ -1,0 +1,18 @@
+<h2 class="fs-4 fw-semibold mb-3">Produtos</h2>
+
+<button 
+    routerLink="/produto/novo"
+    data-bs-theme="dark"
+    class="btn btn-dark bg-primary-subtle py-1 px-4 ps-3">
+    <i class="bi bi-plus"></i> Novo
+</button>
+
+<hr />
+
+@if (produtos) {
+<app-produto-table
+    [data]="produtos"
+    (editarEvent)="handleTableEditarEvent($event)"
+    (excluirEvent)="handleTableExcluirEvent($event)">
+</app-produto-table>
+}

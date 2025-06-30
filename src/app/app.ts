@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { Menu } from "./components/menu/menu";
-import { Store as StoreInterface } from "./services/store/store.interface";
-import { StoreProduto } from './services/store/store-produto';
+import { Menu } from "./shared/components/menu/menu";
+import { Store as StoreInterface } from "./core/services/store.interface";
+import { StoreProduto } from './features/produto/services/store-produto';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { StoreCliente } from './services/store/store-cliente';
-import { StoreCategoria } from './services/store/store-categoria';
+import { StoreCliente } from './features/cliente/services/store-cliente';
+import { StoreCategoria } from './features/categoria/services/store-categoria';
 
 @Component({
     selector: 'app-root',

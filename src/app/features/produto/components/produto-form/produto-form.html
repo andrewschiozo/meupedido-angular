@@ -1,0 +1,50 @@
+<h2 class="fs-4 fw-semibold mb-3">Produto #{{ formProduto.value.id || ''}}</h2>
+
+<form
+    role="form"
+    [formGroup]="formProduto"
+    (ngSubmit)="handleSubmit($event)" >
+
+    <div class="form-floating mb-3 d-none">
+        <input id="id" type="number" formControlName="id" class="form-control" />
+        <label for="id">ID</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="nome" formControlName="nome" class="form-control" />
+        <label>Nome</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="preco" formControlName="preco" class="form-control" />
+        <label>Preço</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="descricao" formControlName="descricao" class="form-control" />
+        <label>Descrição</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="imagem" formControlName="imagem" class="form-control" />
+        <label>Imagem</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="qtdEstoque" formControlName="qtdEstoque" class="form-control" />
+        <label>Qtd Estoque</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input id="categoria" formControlName="categoria" class="form-control" />
+        <label>Categoria</label>
+    </div>
+
+    <button 
+        type="submit"
+        [disabled]="!formProduto.valid"
+        data-bs-theme="light"
+        class="btn btn-success w-100">
+        Salvar
+    </button>
+</form>

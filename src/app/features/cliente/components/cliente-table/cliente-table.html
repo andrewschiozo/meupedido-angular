@@ -1,0 +1,31 @@
+<table [class]="class">
+    <thead>
+        <tr>
+            @for(th of tableHeader; track th) {
+                <th>{{th}}</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (registro of data; track registro.id) {
+            <tr>
+                <td>{{registro.id}}</td>
+                <td>{{registro.nome}}</td>
+                <td>{{registro.telefone}}</td>
+                <td>{{registro.email}}</td>
+                <td>{{registro.endereco}}</td>
+                <td>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-outline-secondary" id="dropdownAction" ngbDropdownToggle>
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownAction">
+                            <button ngbDropdownItem (click)="editar(registro)">Editar</button>
+                            <button ngbDropdownItem (click)="excluir(registro)">Excluir</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
