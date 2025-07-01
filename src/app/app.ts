@@ -16,20 +16,20 @@ import { StoreCategoria } from './features/categoria/services/store-categoria';
 export class App {
 
     protected title = 'Meu Pedido';
-    public router: Router = new Router();
+    // public router: Router = new Router();
 
-    services = {
-        store: {
-            produto: {} as StoreInterface,
-            cliente: {} as StoreInterface,
-            categoria: {} as StoreInterface
-        }
-    };
+    // services = {
+    //     store: {
+    //         produto: {} as StoreInterface,
+    //         cliente: {} as StoreInterface,
+    //         categoria: {} as StoreInterface
+    //     }
+    // };
 
-    public constructor()
+    public constructor(protected router: Router)
     {
-        this.services.store.produto = StoreProduto.getInstance();
-        this.services.store.cliente = StoreCliente.getInstance();
-        this.services.store.categoria = StoreCategoria.getInstance();        
+        // this.services.store.produto = StoreProduto.getInstance();
+        // this.services.store.cliente = StoreCliente.getInstance();
+        // this.services.store.categoria = StoreCategoria.getInstance();        
     }
 }

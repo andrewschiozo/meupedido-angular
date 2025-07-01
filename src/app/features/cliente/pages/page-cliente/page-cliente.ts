@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ClienteTable } from '../../components/cliente-table/cliente-table';
 import { Cliente } from '../../models/cliente.interface';
-import { App } from '../../../../app';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-page-cliente',
@@ -10,17 +9,20 @@ import { RouterModule } from '@angular/router';
     templateUrl: './page-cliente.html',
     styleUrl: './page-cliente.css'
 })
-export class PageCliente extends App {
-    clientes: Cliente[] = this.services.store.cliente.getData();
+export class PageCliente {
+    clientes: Cliente[] = []
 
+    public constructor(private router: Router) {
+
+    }
 
     handleTableEditarEvent(cliente: Cliente) {
-        this.services.store.cliente.setEntityToEdit(cliente);
+        // this.services.store.cliente.setEntityToEdit(cliente);
         this.router.navigate(['/cliente/editar']);
     }
 
     handleTableExcluirEvent(cliente: Cliente) {
-        this.services.store.cliente.remove(cliente.id);
-        this.clientes = this.services.store.cliente.getData();
+        // this.services.store.cliente.remove(cliente.id);
+        // this.clientes = this.services.store.cliente.getData();
     }
 }
