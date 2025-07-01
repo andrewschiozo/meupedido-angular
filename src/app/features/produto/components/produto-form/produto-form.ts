@@ -20,9 +20,9 @@ export class ProdutoForm {
             nome: new FormControl<string>(this.produto.nome, Validators.required),
             preco: new FormControl<number>(this.produto.preco, Validators.required),
             descricao: new FormControl<string>(this.produto.descricao, Validators.required),
-            imagem: new FormControl<string>(this.produto.imagem, Validators.required),
+            imagem: new FormControl<string>(this.produto.imagem),
             qtdEstoque: new FormControl<number>(this.produto.qtdEstoque, Validators.required),
-            categoria: new FormControl<string>(this.produto.categoria, Validators.required),
+            categoria: new FormControl<string>(this.produto.categoria),
         });
         return;
     }

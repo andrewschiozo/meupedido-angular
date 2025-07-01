@@ -14,7 +14,7 @@ export class ProdutoTable {
     @Output() excluirEvent = new EventEmitter<Produto>()
 
     public class = 'table table-hover';
-    public tableHeader = ['#', 'Nome', 'Preço', 'Descrição', 'Imagem', 'Qtd. Estoque', 'Categoria', 'Ações'];
+    public tableHeader = ['#', 'Nome', 'Preço', 'Descrição', /*'Imagem',*/ 'Qtd. Estoque', /*'Categoria',*/ 'Ações'];
 
     editar(registro: Produto) {
         this.editarEvent.emit(registro);
